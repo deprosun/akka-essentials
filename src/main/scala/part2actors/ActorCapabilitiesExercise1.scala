@@ -10,7 +10,7 @@ object ActorCapabilitiesExercise1 extends App {
 
   val bankAccount: ActorRef = actorSystem.actorOf(BankAccount.fromCounter(counter), "bankAccount")
 
-  val bob = actorSystem.actorOf(Person.fromBankAccount(bankAccount), "bob")
+  val bob = actorSystem.actorOf(PersonA.fromBankAccount(bankAccount), "bob")
 
   //  bob ! Deposit(50)
   bob ! Deposit(50)
@@ -20,7 +20,7 @@ object ActorCapabilitiesExercise1 extends App {
   bob ! "Print"
 }
 
-class Person(bankAccount: ActorRef) extends Actor {
+class PersonA(bankAccount: ActorRef) extends Actor {
   override def receive: Receive = {
     case d: Deposit => bankAccount ! d
     case w: WithDraw => bankAccount ! w
@@ -30,8 +30,8 @@ class Person(bankAccount: ActorRef) extends Actor {
   }
 }
 
-object Person {
-  def fromBankAccount(ref: ActorRef) = Props(new Person(ref))
+object PersonA {
+  def fromBankAccount(ref: ActorRef) = Props(new PersonA(ref))
 }
 
 class Counter extends Actor {
