@@ -38,3 +38,18 @@ object ActorsIntro extends App {
   val personActor = actorSystem.actorOf(person)
   personActor ! "hi"
 }
+
+class Person(name: String) extends Actor {
+  override def receive: Receive = {
+    case "hi" => println(s"Hi, my name is $name")
+    case _ =>
+  }
+}
+
+
+object Person {
+  def props(name: String): Props = {
+    Props(new Person(name))
+  }
+}
+
