@@ -17,8 +17,8 @@ object ChangingActorBehavior extends App {
 
   class FussyKid extends Actor {
 
-    import Mom._
     import FussyKid._
+    import Mom._
 
     var state: String = HAPPY
 
@@ -44,8 +44,8 @@ object ChangingActorBehavior extends App {
 
   class Mom extends Actor {
 
-    import Mom._
     import FussyKid._
+    import Mom._
 
     override def receive: Receive = {
       case MomStart(kidRef) =>

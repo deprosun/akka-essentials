@@ -1,0 +1,14 @@
+{
+  "dataFlow": [
+    {
+      "source": "tweet",
+      "map": "mapping/user.mapper",
+      "out" : "tweeterUser"
+    },
+    {
+      "source": "tweeterUser",
+      "map": "mapping/user.mapper",
+      "out" : "tweeterUser"
+    }
+  ]
+}

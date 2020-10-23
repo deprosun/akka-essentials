@@ -1,7 +1,7 @@
 package part2actors
 
 import akka.actor.{Actor, ActorRef, ActorSystem, Props}
-import part2actors.ChangingActorBehaviorPart2.Counter.{Decrement, Increment, Print}
+import part2actors.ChangingActorBehaviorPart2.Counter.Print
 //import part2actors.ChangingActorBehaviorPart2.Mom.MomStart
 
 
